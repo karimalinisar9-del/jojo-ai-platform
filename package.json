@@ -1,0 +1,13 @@
+{
+  "name": "jojo-ai-platform",
+  "private": true,
+  "version": "0.1.0",
+  "packageManager": "pnpm@9.12.3",
+  "scripts": {
+    "dev": "pnpm --filter web dev",
+    "build": "pnpm --filter web build",
+    "start": "pnpm --filter web start",
+    "type-check": "pnpm --filter web type-check",
+    "lint": "pnpm --filter web lint"
+  }
+}

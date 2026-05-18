@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { ClerkProvider } from '@clerk/nextjs';
+import { AppClerkProvider } from '@/components/clerk-provider';
 import { Providers } from '@/components/providers';
 import './globals.css';
 
@@ -14,13 +14,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <ClerkProvider>
+    <AppClerkProvider>
       <html lang="en" suppressHydrationWarning>
         <head />
         <body>
           <Providers>{children}</Providers>
         </body>
       </html>
-    </ClerkProvider>
+    </AppClerkProvider>
   );
 }

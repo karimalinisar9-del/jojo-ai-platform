@@ -4,6 +4,7 @@ import { UserButton } from '@clerk/nextjs';
 import Link from 'next/link';
 
 export default function CandidatesPage() {
+const hasClerk = Boolean(process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY);
   return (
     <div className="min-h-screen bg-gray-50">
       <nav className="bg-white shadow">
@@ -23,7 +24,11 @@ export default function CandidatesPage() {
                 </Link>
               </div>
             </div>
-            <UserButton afterSignOutUrl="/" />
+            {hasClerk ? (
+              <UserButton afterSignOutUrl="/" />
+            ) : (
+              <div className="rounded bg-gray-200 px-3 py-1 text-sm text-gray-700">Guest</div>
+            )}
           </div>
         </div>
       </nav>
